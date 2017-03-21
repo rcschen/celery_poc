@@ -13,7 +13,7 @@ app = Celery('gg',
 app.conf.beat_schedule = {
     # Executes every Monday morning at 7:30 a.m.
     'add-every-monday-morning': {
-        'task': 'c_2_in_app.tasks.add',
+        'task': 'workers.tasks.add',
 #        'schedule': crontab(minute='*'),
         'schedule': timedelta(seconds=1),
         'args': (16, 16),
